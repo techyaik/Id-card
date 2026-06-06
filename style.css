@@ -1,0 +1,239 @@
+/* ===== FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap');
+
+/* ===== RESET ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== BODY ===== */
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* ===== CARD CONTAINER ===== */
+/* Gold outer border wrapping the white inner card */
+.card {
+    width: 6cm;
+    height: 9cm;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.card-border {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ===== BACKGROUND SVG ===== */
+.bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* ===== HEADER TEXT ===== */
+.header-text {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    color: #FFFFFF;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 0.95;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    transform: scaleY(1.3);
+    transform-origin: top center;
+}
+
+/* ===== STUDENT PHOTO ===== */
+/* Gold outer ring around photo */
+.photo-ring {
+    position: absolute;
+    top: 58px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #D48C1F;
+    z-index: 4;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Circular clipping for the photo with a white inner border */
+.photo-clip {
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    margin: 3px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.photo-clip img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== INFO CARD (white, slanted top edge with clip-path) ===== */
+.info-card-wrapper {
+    position: absolute;
+    top: 82px;
+    left: 10px;
+    right: 10px;
+    height: 146px;
+    z-index: 3;
+}
+
+.info-card {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.18));
+}
+
+.info-card-content {
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    clip-path: polygon(0 5%, 100% 45%, 100% 100%, 0 100%);
+    padding-top: 66px; /* Offset to clear the slant on the left and middle */
+    padding-left: 12px;
+    padding-right: 12px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+/* ===== STUDENT NAME ===== */
+.student-name {
+    width: 100%;
+    text-align: center;
+    color: #D48C1F;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 9px;
+    letter-spacing: 0.2px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+/* ===== INFO TABLE ===== */
+.info-table {
+    border-collapse: collapse;
+    font-size: 8.5px;
+    color: #111111;
+    line-height: 1.2;
+    width: 100%;
+}
+
+.info-table td {
+    padding: 0.8px 0;
+    vertical-align: top;
+}
+
+.info-table .lbl {
+    font-weight: 700;
+    width: 40px;
+    white-space: nowrap;
+}
+
+.info-table .sep {
+    width: 8px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.info-table .val {
+    font-weight: 500;
+}
+
+/* ===== LOGO BOX ===== */
+.logo-box {
+    position: absolute;
+    top: 236px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 42px;
+    height: 40px;
+    background: #fff;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+.logo-box svg {
+    width: 36px;
+    height: 34px;
+}
+
+/* ===== PHONE BADGE ===== */
+.phone-badge {
+    position: absolute;
+    top: 284px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #D48C1F;
+    border-radius: 2px;
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 5;
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.phone-icon {
+    width: 11px;
+    height: 11px;
+}
+
+/* ===== FOOTER TEXT ===== */
+.footer-text {
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 7px;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
